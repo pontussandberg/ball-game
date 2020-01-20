@@ -1,0 +1,106 @@
+@font-face {
+    font-family: 'gothic';
+    src: url('fonts/GOTHIC.TTF');
+}
+
+body, *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'gothic';
+    /* font-weight: bold; */
+}
+
+body{
+    background: #111    ;
+    height: 150vh;
+}
+
+
+
+#map-nr{
+    color: #fff;
+    font-size: 20px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#end-message{
+    position: absolute;
+    left: 50%;
+    top: 500px;
+    transform: translate(-50%);
+    font-size: 80px;   
+    z-index: 9;
+    color: #fff;
+}
+
+#game-container{    
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 50px;
+
+    border: 1px solid #fff;
+}
+
+#canvas1{
+    background: url('./bck.jpg');
+    background-color: rgb(82, 82, 82);
+    background-size: cover;
+    background-blend-mode: multiply;
+}
+
+header{
+    background-color: #272b33;
+    margin: 0 auto;
+}
+
+header > h1{
+    color: #9998db;
+    text-align: center;
+    padding-top: 30px;
+    font-size: 40px;
+}
+
+#menu-container{
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+    padding-top: 35px;
+    background: #111;
+    border-bottom: 1px solid #fff;
+}
+
+.btn{
+    z-index: 10;
+    height: 50px;
+    width: 130px;
+    background-color: #007bff;
+    padding: 5px;
+    font-size: 22px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #fff;
+}
+
+.btn:hover{
+    cursor: pointer;
+    border: 1px solid #fff;
+}
+
+#reset{
+    background-color: #dd3445;
+}
+
+#reset:hover{
+    cursor: pointer;
+    border: 1px solid #fff;
+}
+
