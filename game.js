@@ -98,8 +98,6 @@ class Game {
             mapNr_div.innerHTML = `Level: ${this.map} / 3`;
             start_btn.style.visibility = "visible";
 
-
-
             this.gameLoop();
         }
 
@@ -127,7 +125,6 @@ class Game {
         this.collisionCanvas();
 
         this.gameRAF = requestAnimationFrame(this.gameLoop);
-        console.log(this.gameRAF);
     }
 
     updateAvatarPos() {
@@ -369,7 +366,8 @@ class Game {
 // Game initializer
 let ctx = game_canvas.getContext('2d');
 let game = new Game();
-game.start();
+game.buildMap1();
+game.drawMap();
 
 
 
@@ -398,7 +396,6 @@ reset_btn.addEventListener('click', () => {
 window.addEventListener("keydown", function (e) {
     e.preventDefault();
     game.gameKeys[e.keyCode] = true;
-    console.log(game.gameKeys[e.keyCode]);
 });
 
 window.addEventListener("keyup", function (e) {
