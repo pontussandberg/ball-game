@@ -65,25 +65,15 @@ class Game {
     constructor() {
         this.gameRAF;
         this.isRunning = false;
-
-
         this.avatar;
         this.gameKeys = [];
         this.avatarVel = 0.5;
         this.avatarMaxVel = 4;
-
         this.wallThickness = 20;
-
         this.squares = [];
         this.walls = [];
         this.movingSquares = [];
-
         this.map = 1;
-
-        this.fps = 60;
-        this.interval = this.fps / 1000;
-        this.timeAccumulator = 0;
-
     }
 
     start() {
@@ -105,7 +95,11 @@ class Game {
                 this.buildMap3();
             }
 
-            mapNr_div.innerHTML = `Map: ${this.map} / 3`;
+            mapNr_div.innerHTML = `Level: ${this.map} / 3`;
+            mapNext_div.style.visibility = "visible";
+            start_btn.innerHTML = 'Start';
+
+
 
             this.gameLoop();
         }
@@ -176,11 +170,6 @@ class Game {
                 this.avatar.xVel -= this.avatar.xVel / 10;
             }
         }
-        // if (this.avatar.xVel < 0.1 || this.avatar.xVel > -0.1)
-        //     this.avatar.xVel = 0;
-        // if (this.avatar.yVel < 0.1 || this.avatar.yVel > -0.1)
-        //     this.avatar.yVel = 0;
-
     }
 
     collisionCanvas() {
@@ -282,10 +271,12 @@ class Game {
     win() {
         if (this.map < 3) {
             this.map++;
+            start_btn.innerHTML = 'Next Level';
+            mapNext_div.style.visibility = "hidden";
             endMsg_div.innerHTML = 'Level complete!';
         }
-        if (this.map >= 3)
-            endMsg_div.innerHTML = 'You finished the game!';
+        else if (this.map = 3)
+            endMsg_div.innerHTML = 'You finished the game! </br>';
 
     }
 
@@ -294,20 +285,10 @@ class Game {
     }
 
     reset() {
-        // this.isRunning = false;
         cancelAnimationFrame(this.gameRAF);
-        // this.avatar = null;
-        // this.squares = [];
-        // this.walls = [];
-        // this.movingSquares = [];
-
-        // start_btn.style.background = 'green';
-
-
         this.isRunning = false;
         this.avatar = null;
         this.gameKeys = [];
-
         this.squares = [];
         this.walls = [];
         this.movingSquares = [];
