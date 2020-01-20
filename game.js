@@ -78,9 +78,9 @@ class Game {
 
     start() {
 
-        this.reset();
 
         if (!this.isRunning) {
+            this.reset();
             endMsg_div.innerHTML = '';
 
             this.isRunning = true;
@@ -96,8 +96,7 @@ class Game {
             }
 
             mapNr_div.innerHTML = `Level: ${this.map} / 3`;
-            mapNext_div.style.visibility = "visible";
-            start_btn.innerHTML = 'Start';
+            start_btn.style.visibility = "visible";
 
 
 
@@ -270,9 +269,7 @@ class Game {
 
     win() {
         if (this.map < 3) {
-            this.map++;
-            start_btn.innerHTML = 'Next Level';
-            mapNext_div.style.visibility = "hidden";
+            start_btn.style.visibility = "hidden";
             endMsg_div.innerHTML = 'Level complete!';
         }
         else if (this.map = 3)
