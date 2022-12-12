@@ -107,7 +107,7 @@ class Game {
         if (!isRunning) {
             this.gameInterval = setInterval(() => {
                 requestAnimationFrame(this.gameLoop)
-            }, 60);
+            }, 150);
         }
     }
 
