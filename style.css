@@ -45,7 +45,7 @@ body{
 }
 
 #canvas1{
-    background: url('./bck.jpg');
+    background: url('./assets/bck.jpg');
     background-color: rgb(82, 82, 82);
     background-size: cover;
     background-blend-mode: multiply;
