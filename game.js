@@ -11,7 +11,6 @@ let mapNext_div = document.getElementById('change-map');
 game_canvas.height = 600;
 game_canvas.width = 800;
 
-
 class Avatar {
     constructor(x, y, radius) {
         this.x = x;
@@ -19,7 +18,6 @@ class Avatar {
         this.radius = radius;
         this.xVel = 0;
         this.yVel = 0;
-
     }
     draw() {
         ctx.strokeStyle = '#00F108';
@@ -40,7 +38,6 @@ class Square {
         this.xVel = xVel || 0;
         this.yVel = yVel || 0;
         this.color = color;
-
     }
     draw() {
         if (!this.color) {
@@ -53,13 +50,6 @@ class Square {
         ctx.fillRect(this.x, this.y, this.width, this.height);
     }
 }
-
-
-
-
-
-
-
 
 class Game {
     constructor() {
@@ -77,7 +67,6 @@ class Game {
     }
 
     start() {
-
 
         if (!this.isRunning) {
             this.reset();
@@ -236,8 +225,8 @@ class Game {
             }
 
             if (xMoving && yMoving) {
-                lose();
-                reset();
+                this.lose();
+                this.reset();
             }
         }
     }
@@ -368,9 +357,6 @@ let ctx = game_canvas.getContext('2d');
 let game = new Game();
 game.buildMap1();
 game.drawMap();
-
-
-
 
 // Handelers
 mapNext_div.addEventListener('click', () => {
